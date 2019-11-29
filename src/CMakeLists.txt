@@ -1,5 +1,5 @@
 set (xcode_version 11.0)
-set (xcode_dir bin/xcode/)
+set (xcode_dir share/xcode/)
 
 configure_file(xcodebuild.in xcodebuild @ONLY)
 configure_file(carthage.in carthage @ONLY)
