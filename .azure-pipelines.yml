@@ -1,0 +1,30 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    mkdir build
+    cd build
+    cmake ..
+    make
+  displayName: 'Build xcshim'
+
+- script: |
+    mkdir dist
+    cd build
+    DESTDIR=../dist make install
+  displayName: 'Package xcshim'
+
+- script: |
+    mkdir -p $(Build.ArtifactStagingDirectory)/pkg
+    git archive --output $(Build.ArtifactStagingDirectory)/pkg/xcshim.0.1.tar.gz HEAD
+
+    cd dist
+    tar cvzf $(Build.ArtifactStagingDirectory)/pkg/xcdist.0.1.dist.tar.gz .
+  displayName: 'Prepare artifacts'
+
+- publish: $(Build.ArtifactStagingDirectory)/pkg
+  artifact: pkg
