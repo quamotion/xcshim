@@ -10,6 +10,7 @@ steps:
     cd build
     cmake ..
     make
+    cpack
   displayName: 'Build xcshim'
 
 - script: |
@@ -20,8 +21,14 @@ steps:
 
 - script: |
     mkdir -p $(Build.ArtifactStagingDirectory)/pkg
+
+    # Create a source tarball
     git archive --output $(Build.ArtifactStagingDirectory)/pkg/xcshim.0.1.tar.gz HEAD
 
+    # Copy over the Debian package
+    cp build/*.deb $(Build.ArtifactStagingDirectory)/pkg/
+
+    # Create a binary tarball
     cd dist
     tar cvzf $(Build.ArtifactStagingDirectory)/pkg/xcdist.0.1.dist.tar.gz .
   displayName: 'Prepare artifacts'
