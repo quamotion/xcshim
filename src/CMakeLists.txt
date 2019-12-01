@@ -5,6 +5,7 @@ configure_file(xcodebuild.in xcodebuild @ONLY)
 configure_file(carthage.in carthage @ONLY)
 configure_file(xcrun.in xcrun @ONLY)
 configure_file(Info.plist.in Info.plist @ONLY)
+configure_file(10-xcshim.sh.in 10-xcshim.sh @ONLY)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xcodebuild DESTINATION ${xcode_dir})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xcrun DESTINATION ${xcode_dir})
@@ -12,3 +13,4 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/carthage DESTINATION ${xcode_dir})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Info.plist DESTINATION ${xcode_dir}/Contents/)
 install(DIRECTORY DESTINATION ${xcode_dir}/Contents/Developer)
 
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/10-xcshim.sh DESTINATION etc/profile.d)

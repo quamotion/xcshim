@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Copyright (c) 2019 Quamotion bvba
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# This file is part of xcode-shim @PROJECT_VERSION@
+#
+# Purpose: Set the DEVELOPER_DIR environment variable, and update the
+# PATH variable, so Appium can locate the Xcode shims
+
+export DEVELOPER_DIR="/usr/local/xcode"
+export PATH="${DEVELOPER_DIR}:${PATH}"
