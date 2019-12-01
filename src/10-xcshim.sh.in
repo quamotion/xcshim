@@ -11,5 +11,5 @@
 # Purpose: Set the DEVELOPER_DIR environment variable, and update the
 # PATH variable, so Appium can locate the Xcode shims
 
-export DEVELOPER_DIR="/usr/local/xcode"
+export DEVELOPER_DIR="@xcode_dir@"
 export PATH="${DEVELOPER_DIR}:${PATH}"

@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(xcshim VERSION 0.1.2)
+project(xcshim VERSION 0.1.3)
 
 set(PACKAGE_AUTHOR "Quamotion bvba")
+set(CMAKE_INSTALL_PREFIX "/usr/local")
 
 add_subdirectory(src)
 

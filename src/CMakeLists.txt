@@ -1,7 +1,9 @@
-set (xcode_version 11.0)
-set (xcode_dir opt/xcode)
+set (etc_dir /etc)
 
-set (config_dir etc/quamotion)
+set (xcode_version 11.0)
+set (xcode_dir ${CMAKE_INSTALL_PREFIX}/opt/xcode)
+
+set (config_dir ${etc_dir}/quamotion)
 set (license_file ${config_dir}/.license)
 set (developer_profile_file ${config_dir}/quamotion.developerprofile)
 set (developer_profile_password quamotion)
@@ -21,4 +23,4 @@ install(DIRECTORY DESTINATION ${xcode_dir}/Contents/Developer)
 install(DIRECTORY DESTINATION ${config_dir})
 install(DIRECTORY DESTINATION ${developer_disk_dir})
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/10-xcshim.sh DESTINATION etc/profile.d)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/10-xcshim.sh DESTINATION ${etc_dir}/profile.d)
