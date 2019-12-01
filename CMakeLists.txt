@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(xcshim VERSION 0.1.1)
+project(xcshim VERSION 0.1.2)
 
 set(PACKAGE_AUTHOR "Quamotion bvba")
 

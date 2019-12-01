@@ -1,5 +1,11 @@
 set (xcode_version 11.0)
-set (xcode_dir share/xcode/)
+set (xcode_dir opt/xcode)
+
+set (config_dir etc/quamotion)
+set (license_file ${config_dir}/.license)
+set (developer_profile_file ${config_dir}/quamotion.developerprofile)
+set (developer_profile_password quamotion)
+set (developer_disk_dir ${config_dir}/devimg)
 
 configure_file(xcodebuild.in xcodebuild @ONLY)
 configure_file(carthage.in carthage @ONLY)
@@ -12,5 +18,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xcrun DESTINATION ${xcode_dir})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/carthage DESTINATION ${xcode_dir})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Info.plist DESTINATION ${xcode_dir}/Contents/)
 install(DIRECTORY DESTINATION ${xcode_dir}/Contents/Developer)
+install(DIRECTORY DESTINATION ${config_dir})
+install(DIRECTORY DESTINATION ${developer_disk_dir})
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/10-xcshim.sh DESTINATION etc/profile.d)

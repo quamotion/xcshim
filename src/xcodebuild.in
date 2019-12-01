@@ -52,10 +52,10 @@ case $command in
         # can then handle it properly.
         exec /usr/share/xcuitrunner/xcuitrunner \
             run \
-            -d ${DEVELOPER_PROFILE_PATH:-/quamotion/quamotion.developerprofile} \
-            -p ${DEVELOPER_PROFILE_PASSWORD:-quamotion} \
-            -l ${LICENSE_PATH:-/quamotion/.license} \
-            -k ${DEVELOPER_IMAGE_PATH:-/quamotion/devimg} \
+            -d ${DEVELOPER_PROFILE_PATH:-@developer_profile_file@} \
+            -p ${DEVELOPER_PROFILE_PASSWORD:-@developer_profile_password@} \
+            -l ${LICENSE_PATH:-@license_file@} \
+            -k ${DEVELOPER_IMAGE_PATH:-@developer_disk_dir@} \
             -u ${udid} \
             -a ~
     ;;
