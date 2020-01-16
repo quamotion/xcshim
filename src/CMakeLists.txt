@@ -14,7 +14,6 @@ configure_file(carthage.in carthage @ONLY)
 configure_file(xcrun.in xcrun @ONLY)
 configure_file(xcode-select.in xcode-select @ONLY)
 configure_file(Info.plist.in Info.plist @ONLY)
-configure_file(10-xcshim.sh.in 10-xcshim.sh @ONLY)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xcodebuild DESTINATION ${xcode_dir} PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xcrun DESTINATION ${xcode_dir} PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
@@ -40,5 +39,3 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xcode-select_symlink RENAME xcode-sele
 install(DIRECTORY DESTINATION ${xcode_dir}/Contents/Developer)
 install(DIRECTORY DESTINATION ${config_dir})
 install(DIRECTORY DESTINATION ${developer_disk_dir})
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/10-xcshim.sh DESTINATION ${etc_dir}/profile.d)
