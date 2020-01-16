@@ -28,6 +28,9 @@ steps:
     # Copy over the Debian package
     cp build/*.deb $(Build.ArtifactStagingDirectory)/pkg/
 
+    # Copy over the RedHat package
+    cp build/*.rpm $(Build.ArtifactStagingDirectory)/pkg/
+
     # Create a binary tarball
     cd dist
     tar cvzf $(Build.ArtifactStagingDirectory)/pkg/xcdist.0.1.dist.tar.gz .
