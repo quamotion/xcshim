@@ -7,7 +7,7 @@ set(CMAKE_INSTALL_PREFIX "/usr/local")
 
 add_subdirectory(src)
 
-SET(CPACK_GENERATOR "DEB")
+SET(CPACK_GENERATOR "DEB;RPM")
 SET(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Run Appium tests on iOS devices, on Linux")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Frederik Carlier <frederik.carlier@quamotion.mobi>")
 SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "http://docs.quamotion.mobi")
